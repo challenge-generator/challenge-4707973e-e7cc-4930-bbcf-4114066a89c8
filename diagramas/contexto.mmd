@@ -1,0 +1,48 @@
+```mermaid
+C4Context
+  title Diagrama de Contexto - Corporación de Banca y Finanzas
+  
+  %% Actores Externos
+  person(cliente, "Cliente", "Usuario final de los servicios financieros de la corporación.")
+  person(regulador, "Regulador", "Entidad gubernamental que supervisa el cumplimiento normativo.")
+  person(proveedor, "Proveedor de Tecnología", "Proveedor externo de soluciones tecnológicas.")
+  
+  %% Sistemas Externos
+  system(banco_central, "Banco Central", "Sistema del banco central para liquidación de transacciones.")
+  system(socios_comerciales, "Socios Comerciales", "Sistemas de socios comerciales para integración de servicios.")
+  system(sistema_legado, "Sistemas Heredados", "Sistemas internos existentes de la corporación.")
+  
+  %% Sistema Principal
+  system(corporacion, "Corporación de Banca y Finanzas", "Sistema principal de la corporación que será modernizado.")
+  
+  %% Relaciones
+  Rel(cliente, corporacion, "Realiza transacciones financieras", "HTTPS")
+  Rel(corporacion, banco_central, "Liquidación de transacciones", "SFTP/ISO8583")
+  Rel(corporacion, socios_comerciales, "Integración de servicios", "API REST/SOAP")
+  Rel(regulador, corporacion, "Reportes de cumplimiento", "HTTPS/FTPS")
+  Rel(proveedor, corporacion, "Soporte y mantenimiento", "Contrato")
+  Rel(corporacion, sistema_legado, "Acceso a datos históricos", "Base de datos/JDBC")
+  
+  %% Preguntas Guía para Completar el Diagrama
+  %% 1. ¿Qué otros actores externos interactúan con la corporación?
+  %%    - Ejemplo: Auditores, Agencias de crédito, Proveedores de datos.
+  %% 
+  %% 2. ¿Qué sistemas externos adicionales son críticos para las operaciones de la corporación?
+  %%    - Ejemplo: Sistemas de pagos internacionales, Proveedores de autenticación.
+  %% 
+  %% 3. ¿Qué relaciones entre actores y sistemas faltan en el diagrama?
+  %%    - Ejemplo: Clientes interactuando con sistemas de socios comerciales.
+  %%    - ¿Existen relaciones indirectas que deban representarse?
+  %% 
+  %% 4. ¿Qué contratos (protocolos, formatos de datos) deben definirse en cada frontera?
+  %%    - Ejemplo: ¿La comunicación con el banco central usa ISO20022 o ISO8583?
+  %%    - ¿Los socios comerciales requieren autenticación OAuth2 o JWT?
+  %% 
+  %% 5. ¿Qué sistemas heredados son críticos y deben mantenerse o integrarse durante la transformación?
+  %%    - Ejemplo: Core bancario, Sistemas de préstamos, CRM.
+  %% 
+  %% 6. ¿Qué stakeholders internos (ej. áreas de negocio, TI, legal) deben considerarse como actores?
+  %%    - Ejemplo: Equipo de compliance, Departamento de fraude.
+  
+  %% Nota: Completa el diagrama con las relaciones y actores adicionales identificados en el análisis del negocio.
+```
